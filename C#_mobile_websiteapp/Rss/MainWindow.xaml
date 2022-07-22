@@ -1,0 +1,53 @@
+﻿<Window x:Class="Rss.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Rss"
+        mc:Ignorable="d"
+        Title="Rss" WindowState="Maximized"  Width="1920" Height="1080" Closing="OnClose" 
+        StateChanged="OnStateChanged" IsVisibleChanged="OnIsVisibleChanged">
+    <Grid>
+        <ListBox  x:Name="lstText" Margin="80,86,100,48" MouseDoubleClick="lstText_Selected">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="80"/>
+                            <RowDefinition MaxHeight="500"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition MaxWidth="1250"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="{Binding Link_Imagem}" MaxWidth="90" MaxHeight="100" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                        <StackPanel Grid.Column = "1"  Grid.Row ="0" Grid.RowSpan="2" >
+                            <TextBlock Text="{Binding Titulo}" Grid.Column = "1" Grid.Row="0" HorizontalAlignment="Center" />
+                            <TextBlock Text="{Binding Descricao}" Grid.Column = "1" Grid.Row ="1" Width="1250" TextWrapping="Wrap" HorizontalAlignment="Left"/>
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Menu Height="48" VerticalAlignment="Top">
+            <MenuItem Header="_Feed" FontSize="16">
+                <MenuItem Header="Adicionar" Click="AdicionarFeed_Click"/>
+                <MenuItem Header="Editar" Click="MenuItem_Edit"/>
+                <MenuItem Header="Remover" Click="MenuItem_RemoveFeed"/>
+            </MenuItem>
+            <MenuItem Header="Arquivo" FontSize="16">
+                <MenuItem Header="Consultar" Click="MenuItem_Arquivo"/>
+            </MenuItem>
+            <MenuItem Header="Notificação" FontSize="16">
+                <MenuItem Header="Consultar" Click="MenuItem_Notific"/>
+            </MenuItem>
+            <MenuItem Header="_Definição" FontSize="16">
+                <MenuItem Header="Atualizar Feed" Click="MenuItem_Atualizar">
+                </MenuItem>
+                <MenuItem Header="Configurar Atualizações Automáticas" Click="MenuItem_Auto"/>
+            </MenuItem>
+        </Menu>
+        <Button x:Name="back" Content="&lt;" HorizontalAlignment="Left" Margin="80,53,0,0" VerticalAlignment="Top" Width="25" Click="Button_Back" IsEnabled="False"/>
+        <TextBlock Name="Header" Text="Feeds" TextAlignment="Center" VerticalAlignment="Top" FontSize="30" Margin="156,48,176,0"  Height="38"/>
+    </Grid>
+</Window>

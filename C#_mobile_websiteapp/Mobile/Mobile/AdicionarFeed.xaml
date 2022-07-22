@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mobile.AdicionarFeed">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid BackgroundColor="LightGray">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Button Text="&lt;" BackgroundColor="LightGray" Grid.Column="0" Clicked="Button_Back"/>
+                <Button Text="..." BackgroundColor="LightGray" Grid.Column="8" Clicked="Button_opt"/>
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Titulo" />
+                <Entry Text="Insira Titulo" x:Name="Etitulo" ClearButtonVisibility="WhileEditing"/>
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+            <Label Text="URL" />
+                <Entry Text="Insira URL" x:Name="URL" ClearButtonVisibility="WhileEditing"/>
+            </Grid>
+            <Grid>
+                    <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Descrição" />
+                <Entry Text="Insira Descrição" x:Name="Descricao" ClearButtonVisibility="WhileEditing"/>
+            </Grid>
+            <Grid>
+                        <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Autor" />
+                <Entry Text="Insira Autor" x:Name="Autor" ClearButtonVisibility="WhileEditing"/>
+            </Grid>
+            <Grid>
+                            <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="Palavra-Chave" />
+                <Entry Text="Insira Palavra-Chave" x:Name="chave" ClearButtonVisibility="WhileEditing"/>
+            </Grid>
+            <Button Text="Guardar" Clicked="Guardado" VerticalOptions="End"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+   
